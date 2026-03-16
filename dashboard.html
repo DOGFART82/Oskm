@@ -146,7 +146,7 @@
             background: #000;
         }
 
-        /* Gift Button - Smaller */
+        /* Gift Button - Positioned 2.5rem from top */
         .gift-btn {
             background: rgba(255, 255, 255, 0.2);
             border: 1.5px solid rgba(255, 255, 255, 0.5);
@@ -158,8 +158,10 @@
             justify-content: center;
             font-size: 22px;
             animation: shakeGift 1.2s infinite ease-in-out;
-            position: relative;
-            z-index: 50;
+            position: fixed;
+            top: 5.2rem;
+            right: 20px;
+            z-index: 1000;
         }
 
         @keyframes shakeGift {
@@ -213,7 +215,6 @@
 
     <div class="app-overlay"></div>
 
-    <!-- Processing Modal -->
     <div id="processingModal">
         <div class="w-20 h-20 mb-4 relative">
             <div class="absolute inset-0 border-4 border-white/20 rounded-full animate-spin"></div>
@@ -234,7 +235,6 @@
         </button>
     </div>
 
-    <!-- Gift Modal -->
     <div id="giftModal">
         <div class="bg-[#0f0f0f] border-2 border-white/30 p-8 rounded-[30px] text-center max-w-[300px] shadow-2xl">
             <div class="text-5xl mb-4">🎁</div>
@@ -250,7 +250,6 @@
     </div>
 
     <div class="flex-1 flex flex-col relative z-10 w-full">
-        <!-- Header -->
         <div class="h-[70px] flex items-center justify-between px-5 pt-4">
             <div class="w-10"></div>
             <div class="text-center">
@@ -263,7 +262,6 @@
         </div>
 
         <div class="content-container">
-            <!-- Profile Wrapper -->
             <div class="profile-wrapper">
                 <div class="profile-frame"></div>
                 <div class="profile-pic-container">
@@ -274,7 +272,6 @@
             <div class="content-inner">
                 <div class="flex-1 space-y-4 overflow-y-auto no-scrollbar">
                     
-                    <!-- Status Check -->
                     <div onclick="toggleFreeCheck(true)" class="bg-white/5 border-2 border-white/30 p-4 rounded-xl flex items-center justify-between active:scale-95 transition-all">
                         <div class="flex items-center gap-2">
                             <span class="text-white text-sm font-black animate-pulse">»</span>
@@ -283,7 +280,6 @@
                         <span class="text-white/30 text-[10px] font-bold">VIEW ›</span>
                     </div>
 
-                    <!-- Wallet Input -->
                     <div class="space-y-1.5">
                         <label class="text-[9px] font-black text-white/60 uppercase ml-1 flex items-center gap-2">
                             <span>ERC20 ADDRESS</span>
@@ -295,7 +291,6 @@
                         </div>
                     </div>
 
-                    <!-- Config Grid -->
                     <div class="grid grid-cols-2 gap-3">
                         <div class="space-y-1.5">
                             <label class="text-[9px] font-black text-white/60 uppercase ml-1">NODE CORE</label>
@@ -313,7 +308,6 @@
                         </div>
                     </div>
 
-                    <!-- Referral -->
                     <div class="space-y-1.5">
                         <label class="text-[9px] font-black text-white/60 uppercase ml-1">REFERRAL CODE</label>
                         <div class="remix-input flex items-center gap-2 py-3">
@@ -331,7 +325,6 @@
         </div>
     </div>
 
-    <!-- Sheets & Overlays -->
     <div id="bottomSheetOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[500] hidden"></div>
     <div id="coreSheetOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[500] hidden"></div>
 
@@ -349,7 +342,6 @@
         <div id="coreOptionsContainer" class="p-1"></div>
     </div>
 
-    <!-- Free Check Modal -->
     <div id="freeCheckModal">
         <div class="flex items-center justify-between p-4 bg-[#0f0f0f] border-b-2 border-white/10 w-full rounded-t-2xl">
             <span class="text-white text-xs font-black uppercase">Status</span>
@@ -469,4 +461,3 @@
     </script>
 </body>
 </html>
-
