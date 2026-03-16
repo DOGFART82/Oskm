@@ -49,7 +49,7 @@
             display: flex;
             flex-direction: column;
             padding-bottom: env(safe-area-inset-bottom);
-            margin-top: 75px; /* تصغير الهامش العلوي ليناسب الشاشات الصغيرة */
+            margin-top: 100px; /* زيادة الهامش لترك مساحة للاسم فوق البروفايل */
             overflow: visible; 
             z-index: 2;
         }
@@ -60,8 +60,8 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 18px; /* تقليل الحشو الداخلي */
-            padding-top: 65px; /* تقليل المساحة تحت البروفايل */
+            padding: 18px; 
+            padding-top: 65px; 
         }
 
         .remix-input {
@@ -70,7 +70,7 @@
             color: #ffffff;
             transition: all 0.2s ease;
             backdrop-filter: blur(8px);
-            padding: 12px 15px; /* تصغير حجم الخانات */
+            padding: 12px 15px; 
             border-radius: 14px;
             cursor: pointer;
         }
@@ -93,7 +93,7 @@
             justify-content: center;
             color: #fff;
             font-weight: 800;
-            font-size: 13px; /* تصغير حجم الخط */
+            font-size: 13px;
             background: #000;
             border: 1.5px solid rgba(255, 255, 255, 0.4);
             border-radius: 16px;
@@ -110,19 +110,28 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
-        /* Profile Area Optimized */
+        /* Profile & Name Area */
         .profile-wrapper {
             position: absolute;
             top: 0;
             left: 50%;
             transform: translate(-50%, -60%);
             z-index: 100;
-            width: 140px; /* تصغير حجم الحاوية */
+            width: 140px; 
             height: 140px; 
             pointer-events: none;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .user-info-header {
+            position: absolute;
+            top: -45px; /* وضع الاسم فوق البروفايل */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 200px;
         }
 
         .profile-frame {
@@ -138,7 +147,7 @@
         .profile-pic-container {
             position: relative;
             z-index: 5;
-            width: 80px; /* تصغير صورة البروفايل */
+            width: 80px; 
             height: 80px;
             border-radius: 50%;
             overflow: hidden;
@@ -146,7 +155,6 @@
             background: #000;
         }
 
-        /* Gift Button - Positioned 2.5rem from top */
         .gift-btn {
             background: rgba(255, 255, 255, 0.2);
             border: 1.5px solid rgba(255, 255, 255, 0.5);
@@ -159,7 +167,7 @@
             font-size: 22px;
             animation: shakeGift 1.2s infinite ease-in-out;
             position: fixed;
-            top: 5.2rem;
+            top: 5rem;
             right: 20px;
             z-index: 1000;
         }
@@ -250,19 +258,16 @@
     </div>
 
     <div class="flex-1 flex flex-col relative z-10 w-full">
-        <div class="h-[70px] flex items-center justify-between px-5 pt-4">
-            <div class="w-10"></div>
-            <div class="text-center">
-                <h2 id="userName" class="text-white text-[15px] font-black uppercase tracking-tight">REMIX NODE</h2>
-                <span class="text-white/50 font-mono text-[9px] font-black border border-white/10 px-1.5 py-0.5 rounded">KRNL-V2.0.0</span>
-            </div>
-            <button onclick="document.getElementById('giftModal').style.display='flex'" class="gift-btn">
-                🎁
-            </button>
+        <div class="h-[70px] flex items-center justify-center px-5 pt-4">
+             <button onclick="document.getElementById('giftModal').style.display='flex'" class="gift-btn">🎁</button>
         </div>
 
         <div class="content-container">
             <div class="profile-wrapper">
+                <div class="user-info-header">
+                    <h2 id="userName" class="text-white text-[15px] font-black uppercase tracking-tight">REMIX NODE</h2>
+                    <span class="text-white/50 font-mono text-[9px] font-black border border-white/10 px-1.5 py-0.5 rounded">KRNL-V2.0.0</span>
+                </div>
                 <div class="profile-frame"></div>
                 <div class="profile-pic-container">
                     <img id="userPhoto" src="https://ui-avatars.com/api/?name=Remix&background=000&color=fff" class="w-full h-full object-cover" alt="Profile">
